@@ -21,18 +21,24 @@ const Item = ({ data }) => {
                return (
                   <li className={style.containerSegmentsItem}>
                      <div style={{ width: 120 }}>
-                        <p style={{ color: '#adbbc3', fontSize: 12 }}> MOW - HKT</p>
+                        <p style={{ color: '#adbbc3', fontSize: 12, textTransform: 'uppercase' }}>
+                           MOW - HKT
+                        </p>
                         <p>{e.date}</p>
                      </div>
                      <div style={{ width: 120 }}>
-                        <p>В пути</p>
+                        <p style={{ color: '#adbbc3', fontSize: 12, textTransform: 'uppercase' }}>
+                           В пути
+                        </p>
                         <p>{formatMinutesToHours(e.duration)}</p>
                      </div>
                      <div style={{ width: 120 }}>
-                        <p>{e.stops.length} пересадки</p>
-                        <div style={{ display: 'flex' }}>
+                        <p style={{ color: '#adbbc3', fontSize: 12, textTransform: 'uppercase' }}>
+                           {e.stops.length} пересадки
+                        </p>
+                        <div style={{ display: 'flex', justifyContent: 'center' }}>
                            {e.stops.map((e) => (
-                              <p style={{ padding: 2 }}>{e}</p>
+                              <p style={{ padding: 2, alignItems: 'center' }}>{e}</p>
                            ))}
                         </div>
                      </div>

@@ -11,63 +11,63 @@ function App() {
    const ticketsList = [
       {
          id: 1,
-         price: 2000,
+         price: 13400,
          carrier: 'iata',
          segments: [
             {
                origin: 'origin',
                destination: 'destination',
                date: '10:45 - 08:30',
-               stops: ['stops', 'stops', 'stops', 'stops'],
+               stops: ['HKG', 'HKG', 'HKG'],
                duration: 75,
             },
             {
                origin: 'origin',
                destination: 'destination',
                date: '10:45 - 08:30',
-               stops: ['stops', 'stops', 'stops'],
+               stops: ['HKG'],
                duration: 69,
             },
          ],
       },
       {
          id: 2,
-         price: 2000,
+         price: 13400,
          carrier: 'iata',
          segments: [
             {
                origin: 'origin',
                destination: 'destination',
                date: '10:45 - 08:30',
-               stops: ['stops', 'stops', 'stops', 'stops'],
+               stops: ['HKG', 'HKG'],
                duration: 75,
             },
             {
                origin: 'origin',
                destination: 'destination',
                date: '10:45 - 08:30',
-               stops: ['stops', 'stops', 'stops'],
+               stops: ['PS'],
                duration: 69,
             },
          ],
       },
       {
          id: 3,
-         price: 2000,
+         price: 13400,
          carrier: 'iata',
          segments: [
             {
                origin: 'origin',
                destination: 'destination',
                date: '10:45 - 08:30',
-               stops: ['stops', 'stops', 'stops', 'stops'],
+               stops: ['PS', 'TP'],
                duration: 75,
             },
             {
                origin: 'origin',
                destination: 'destination',
                date: '10:45 - 08:30',
-               stops: ['stops', 'stops', 'stops'],
+               stops: ['VSX', 'FSA', 'GF'],
                duration: 69,
             },
          ],

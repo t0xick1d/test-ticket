@@ -10,6 +10,7 @@
  display: flex;
  flex-direction: column;
  justify-content: space-around;
+ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 .containerMainInf{ 
  display: flex;
@@ -31,5 +32,5 @@
 }
 .containerSegmentsItem{ 
  display: flex;
- justify-content: space-around;
+ justify-content: space-between;
 }
