@@ -1,0 +1,34 @@
+@import './vars.scss';
+
+.App {
+ width: 100vw;
+ height: 100vh;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ letter-spacing: 0em;
+ text-align: center;
+ background-color: rgb(242, 247, 250);
+}
+.logoContainer{
+ width: 30px;
+ height: 30px;
+ margin-top: 30px;
+ margin-bottom: 30px;
+}
+
+.mainContainer{ 
+ width: $screen-mobile;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+}
+.containerList{ 
+ width: 100%;
+}
+@media screen and (min-width: $screen-tablet) {
+  .mainContainer {
+   width: $screen-tablet;
+   display: block;
+  }
+}
