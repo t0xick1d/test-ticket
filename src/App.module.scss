@@ -1,5 +1,3 @@
-@import './vars.scss';
-
 .App {
  width: 100vw;
  height: 100vh;
@@ -17,25 +15,11 @@
  margin-bottom: 30px;
 }
 
-.mainContainer{ 
- width: $screen-mobile;
+.linkContainer{
+ width: 50%;
+ padding: 15px;
  display: flex;
- flex-direction: column;
- justify-content: center;
+ justify-content: space-around;
  align-items: center;
 }
-.containerList{ 
- width: 100%;
-}
-@media screen and (min-width: $screen-tablet) {
-  .mainContainer {
-   width: $screen-tablet;
-   flex-direction: row;
-    align-items: start;
-  }
-}
-@media screen and (min-width: $screen-compucter) {
-  .mainContainer {
-   width: $screen-compucter;
-  }
-}
+

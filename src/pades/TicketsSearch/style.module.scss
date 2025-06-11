@@ -1,0 +1,23 @@
+@import '../../vars.scss';
+.mainContainer{ 
+ width: $screen-mobile;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+.containerList{ 
+ width: 100%;
+}
+@media screen and (min-width: $screen-tablet) {
+  .mainContainer {
+   width: $screen-tablet;
+   flex-direction: row;
+    align-items: start;
+  }
+}
+@media screen and (min-width: $screen-compucter) {
+  .mainContainer {
+   width: $screen-compucter;
+  }
+}
