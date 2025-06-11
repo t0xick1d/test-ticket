@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { TicketsList, Filter, CountTransplants } from '../../components';
-import { ticketsList } from '../../api';
+import { useSelector, useDispatch } from 'react-redux';
 
 import style from './style.module.scss';
 
 const TicketsSearch = () => {
    const [alignment, setAlignment] = useState('cheap');
+   const tickets = useSelector((state) => state.ticketsReducer.data);
+   const dispatch = useDispatch();
 
    const handleChange = (event, newAlignment) => {
       setAlignment(newAlignment);
@@ -16,7 +18,7 @@ const TicketsSearch = () => {
             <CountTransplants />
             <div className={style.containerList}>
                <Filter alignment={alignment} handleChange={handleChange} />
-               <TicketsList list={ticketsList} />
+               <TicketsList list={tickets} />
             </div>
          </section>
       </div>
