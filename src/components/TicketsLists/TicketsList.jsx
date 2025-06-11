@@ -1,14 +1,27 @@
 import React from 'react';
 import Item from './Item';
 import style from './style.module.scss';
+import { Grid, Box, Card } from '@mui/material';
 
 const TicketsList = ({ list }) => {
    return (
-      <ul className={style.containerList}>
-         {list.map((e) => {
-            return <Item data={e} key={e.id} />;
-         })}
-      </ul>
+      // <Grid className={style.containerList}>
+      <Box sx={{ flexGrow: 1 }}>
+         <Grid
+            container
+            spacing={4}
+            sx={{
+               justifyContent: 'center',
+               alignItems: 'center',
+            }}
+            columnSpacing={{ xs: 1, sm: 2, md: 1 }}
+            className={style.containerList}
+         >
+            {list.map((e) => (
+               <Card key={e.id} children={<Item data={e} />} />
+            ))}
+         </Grid>
+      </Box>
    );
 };
 

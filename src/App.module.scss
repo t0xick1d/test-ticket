@@ -34,3 +34,8 @@
     align-items: start;
   }
 }
+@media screen and (min-width: $screen-compucter) {
+  .mainContainer {
+   width: $screen-compucter;
+  }
+}
