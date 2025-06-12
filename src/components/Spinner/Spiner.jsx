@@ -1,9 +1,18 @@
 import React from 'react';
 
 const Spinner = () => {
-   return (
-      <>
-         <style>{`
+ return (
+    <div
+       style={{
+          width: '100%',
+          height: '100vh',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+       }}
+    >
+       <>
+          <style>{`
         .spinner {
           border: 4px solid rgba(0, 0, 0, 0.1);
           width: 40px;
@@ -18,9 +27,10 @@ const Spinner = () => {
           to { transform: rotate(360deg); }
         }
       `}</style>
-         <div className="spinner" />
-      </>
-   );
+          <div className="spinner" />
+       </>
+    </div>
+ );
 };
 
 export default Spinner;

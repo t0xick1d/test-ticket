@@ -13,35 +13,35 @@ const TicketsSearch = () => {
       twoTransplants: false,
       threeTransplants: false,
    });
-   const searchid = useGetSearchIdQuery();
-   const ticket = useGetTicketsQuery('sdasdasdsa');
+  const searchid = useGetSearchIdQuery();
+  const ticket = useGetTicketsQuery('sdasdasdsa');
 
-   const handleChange = (event, newAlignment) => {
-      setAlignment(newAlignment);
-   };
-   const transplantsChange = (event) => {
-      setTransplants({
-         ...transplants,
-         [event.target.name]: event.target.checked,
-      });
-   };
-   if (ticket.isLoading) {
-      return <Spinner />;
-   }
-   if (ticket.error || searchid.error) {
-      return <div>errorSearchID</div>;
-   }
-   return (
-      <div className={style.App}>
-         <section className={style.mainContainer}>
-            <CountTransplants transplants={transplants} setTransplants={transplantsChange} />
-            <div className={style.containerList}>
-               <Filter alignment={alignment} handleChange={handleChange} />
-               <TicketsList list={ticket.data} />
-            </div>
-         </section>
-      </div>
-   );
+  const handleChange = (event, newAlignment) => {
+     setAlignment(newAlignment);
+  };
+  const transplantsChange = (event) => {
+     setTransplants({
+        ...transplants,
+        [event.target.name]: event.target.checked,
+     });
+  };
+  if (ticket.isLoading) {
+     return <Spinner />;
+  }
+  if (ticket.error || searchid.error) {
+     return <div>errorSearchID</div>;
+  }
+  return (
+     <div className={style.App}>
+        <section className={style.mainContainer}>
+           <CountTransplants transplants={transplants} setTransplants={transplantsChange} />
+           <div className={style.containerList}>
+              <Filter alignment={alignment} handleChange={handleChange} />
+              <TicketsList list={ticket.data} alignment={alignment} transplants={transplants} />
+           </div>
+        </section>
+     </div>
+  );
 };
 
 export default TicketsSearch;
