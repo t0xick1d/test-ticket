@@ -9,6 +9,6 @@ export const ticketsSlice = createSlice({
    reducers: {},
 });
 
-export const { increment, decrement, incrementByAmount } = ticketsSlice.actions;
+// export const {} = ticketsSlice.actions;
 
 export default ticketsSlice.reducer;

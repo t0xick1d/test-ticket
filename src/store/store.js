@@ -1,15 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit'; 
 import { setupListeners } from '@reduxjs/toolkit/query';
 import ticketsReducer from './tickets/ticketsSlice';
-import createSagaMiddleware from 'redux-saga';
-
-const sagaMiddleware = createSagaMiddleware();
+import { ticketsApi } from './tickets/ticketsApi';
 
 export const store = configureStore({
    reducer: {
-      ticketsReducer,
+      tickets: ticketsReducer,
+      [ticketsApi.reducerPath]: ticketsApi.reducer,
    },
-   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(sagaMiddleware),
+   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(ticketsApi.middleware),
 });
 
 setupListeners(store.dispatch);

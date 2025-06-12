@@ -17,9 +17,7 @@ const TicketsList = ({ list }) => {
             columnSpacing={{ xs: 1, sm: 2, md: 1 }}
             className={style.containerList}
          >
-            {list.map((e) => (
-               <Card key={e.id} children={<Item data={e} />} />
-            ))}
+            {list ? list.map((e, i) => <Card key={`${i}list`} children={<Item data={e} />} />) : ''}
          </Grid>
       </Box>
    );
