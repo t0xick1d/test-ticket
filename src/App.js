@@ -1,93 +1,31 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ReactComponent as Logo } from './logoPlane.svg';
-import TicketsList from './components/TicketsLists/TicketsList';
-import Filter from './components/Filter/Filter';
-import CountTransplants from './components/ContTransplants/CountTransplants';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import Link from '@mui/material/Link';
+
+import { TicketsSearch, Home } from './pades';
 
 import style from './App.module.scss';
 
 function App() {
-   const [alignment, setAlignment] = useState('cheap');
-   const ticketsList = [
-      {
-         id: 1,
-         price: 13400,
-         carrier: 'iata',
-         segments: [
-            {
-               origin: 'origin',
-               destination: 'destination',
-               date: '10:45 - 08:30',
-               stops: ['HKG', 'HKG', 'HKG'],
-               duration: 75,
-            },
-            {
-               origin: 'origin',
-               destination: 'destination',
-               date: '10:45 - 08:30',
-               stops: ['HKG'],
-               duration: 69,
-            },
-         ],
-      },
-      {
-         id: 2,
-         price: 13400,
-         carrier: 'iata',
-         segments: [
-            {
-               origin: 'origin',
-               destination: 'destination',
-               date: '10:45 - 08:30',
-               stops: ['HKG', 'HKG'],
-               duration: 75,
-            },
-            {
-               origin: 'origin',
-               destination: 'destination',
-               date: '10:45 - 08:30',
-               stops: ['PS'],
-               duration: 69,
-            },
-         ],
-      },
-      {
-         id: 3,
-         price: 13400,
-         carrier: 'iata',
-         segments: [
-            {
-               origin: 'origin',
-               destination: 'destination',
-               date: '10:45 - 08:30',
-               stops: ['PS', 'TP'],
-               duration: 75,
-            },
-            {
-               origin: 'origin',
-               destination: 'destination',
-               date: '10:45 - 08:30',
-               stops: ['VSX', 'FSA', 'GF'],
-               duration: 69,
-            },
-         ],
-      },
-   ];
-
-   const handleChange = (event, newAlignment) => {
-      setAlignment(newAlignment);
-   };
    return (
       <div className={style.App}>
          <div className={style.logoContainer}>
             <Logo />
          </div>
+         <div className={style.linkContainer}>
+            <Link href="/home">Home</Link>
+            <Link href="/search">Search</Link>
+         </div>
          <section className={style.mainContainer}>
-            <CountTransplants />
-            <div className={style.containerList}>
-               <Filter alignment={alignment} handleChange={handleChange} />
-               <TicketsList list={ticketsList} />
-            </div>
+            <Routes>
+               <Route path="/">
+                  <Route index element={<Navigate to="/search" replace />} />
+                  <Route path="/home" element={<Home />} />
+                  <Route path="/search" element={<TicketsSearch />} />
+                  <Route path="/*" element={<div>404 Error</div>} />
+               </Route>
+            </Routes>
          </section>
       </div>
    );

@@ -1,16 +1,6 @@
+@import '../../vars.scss';
 .containerList{ 
- 
-}
-.containerItem{ 
- height: 165px;
- margin-bottom: 10px;
- border: 1px solid rgb(209, 208, 208);
- border-radius: 10px;
- background-color: rgb(255, 255, 255);
- display: flex;
- flex-direction: column;
- justify-content: space-around;
- box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+ margin: 10px;
 }
 .containerMainInf{ 
  display: flex;
@@ -34,3 +24,13 @@
  display: flex;
  justify-content: space-between;
 }
+// @media screen and (min-width: $screen-tablet) {
+//   .containerList {
+//   grid-template-columns: 1fr 1fr;
+//   }
+// }
+// @media screen and (min-width: $screen-compucter) {
+//   .containerList {
+//    grid-template-columns: 1fr 1fr 1fr;
+//   }
+// }
