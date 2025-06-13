@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { setupListeners } from '@reduxjs/toolkit/query';
 
-import ticketsReducer from './tickets/ticketsSlice';
-import { ticketsApi } from './tickets/ticketsApi';
+import ticketsReducer from './ducks/tickets';
+import { ticketsApi } from './ducks/tickets';
 
 export const store = configureStore({
    reducer: {

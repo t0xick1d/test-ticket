@@ -24,25 +24,19 @@ const Item: React.FC<MyComponentProps> = ({ data }) => {
          <ul className={style.containerSegments}>
             {data.segments.map((e, i) => (
                <li key={`segment${i}`} className={style.containerSegmentsItem}>
-                  <div style={{ width: 120 }}>
-                     <p style={{ color: '#adbbc3', fontSize: 12, textTransform: 'uppercase' }}>
-                        MOW - HKT
-                     </p>
+                  <div className={style.containerInfo}>
+                     <p className={style.secondaryText}>MOW - HKT</p>
                      <p>{getHoursAndMinutes(e.departureTime)}</p>
                   </div>
-                  <div style={{ width: 120 }}>
-                     <p style={{ color: '#adbbc3', fontSize: 12, textTransform: 'uppercase' }}>
-                        В пути
-                     </p>
+                  <div className={style.containerInfo}>
+                     <p className={style.secondaryText}>В пути</p>
                      <p>{formatMinutesToHours(e.duration)}</p>
                   </div>
-                  <div style={{ width: 120 }}>
-                     <p style={{ color: '#adbbc3', fontSize: 12, textTransform: 'uppercase' }}>
-                        {e.stops.length} пересадки
-                     </p>
-                     <div style={{ display: 'flex', justifyContent: 'center' }}>
+                  <div className={style.containerInfo}>
+                     <p className={style.secondaryText}>{e.stops.length} пересадки</p>
+                     <div className={style.containerStops}>
                         {e.stops.map((e, i) => (
-                           <p key={i} style={{ padding: 2, alignItems: 'center' }}>
+                           <p key={i} className={style.pStops}>
                               {e}
                            </p>
                         ))}

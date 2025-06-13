@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { TicketsList, Filter, CountTransplants, Spinner } from '../../components';
-import { useGetTicketsQuery, useGetSearchIdQuery } from '../../store/tickets/ticketsApi';
+import { useGetTicketsQuery, useGetSearchIdQuery } from '../../redux/ducks/tickets';
 
 import style from './style.module.scss';
 

@@ -22,4 +22,16 @@
  justify-content: space-around;
  align-items: center;
 }
+.error{
+ min-width: 100vw;
+ min-height: 100vh;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ color: rgb(250, 112, 112);
+ font-size: 50px;
+ text-transform: uppercase;
+ text-decoration:underline;
+}
 

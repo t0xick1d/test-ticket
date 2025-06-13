@@ -1,5 +1,21 @@
+import { createSlice } from '@reduxjs/toolkit';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+
 import { TicketsI } from '../../types/TicketsInterface';
+
+export interface ticketStateI {
+   data: TicketsI[];
+}
+
+const initialState: ticketStateI = {
+   data: [],
+};
+
+export const ticketsSlice = createSlice({
+   name: 'tickets',
+   initialState,
+   reducers: {},
+});
 
 export const ticketsApi = createApi({
    reducerPath: 'ticketsApi',
@@ -17,3 +33,7 @@ export const ticketsApi = createApi({
 });
 
 export const { useGetSearchIdQuery, useGetTicketsQuery } = ticketsApi;
+
+// export const {} = ticketsSlice.actions;
+
+export default ticketsSlice.reducer;

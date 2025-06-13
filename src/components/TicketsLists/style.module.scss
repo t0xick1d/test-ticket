@@ -15,22 +15,28 @@
  color: black
 }
 .containerSegments{ 
- width: 100%;
+ min-width: 100%;
  padding: 0px;
  display: flex;
  flex-direction: column; 
+}
+.containerInfo{
+ width: 120px;
+}
+.secondaryText{ 
+ color: #adbbc3;
+ font-size: 12px;
+ text-transform: uppercase;
+}
+.containerStops{
+ display: flex;
+ justify-content: center;
+}
+.pStops{
+ padding: 2px;
+ align-items: center;
 }
 .containerSegmentsItem{ 
  display: flex;
  justify-content: space-between;
 }
-// @media screen and (min-width: $screen-tablet) {
-//   .containerList {
-//   grid-template-columns: 1fr 1fr;
-//   }
-// }
-// @media screen and (min-width: $screen-compucter) {
-//   .containerList {
-//    grid-template-columns: 1fr 1fr 1fr;
-//   }
-// }

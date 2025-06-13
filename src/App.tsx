@@ -23,7 +23,7 @@ function App() {
                   <Route index element={<Navigate to="/search" replace />} />
                   <Route path="/home" element={<Home />} />
                   <Route path="/search" element={<TicketsSearch />} />
-                  <Route path="/*" element={<div>404 Error</div>} />
+                  <Route path="/*" element={<div className={style.error}>404 Error</div>} />
                </Route>
             </Routes>
          </section>
