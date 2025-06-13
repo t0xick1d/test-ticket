@@ -1,31 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ReactComponent as Logo } from './logoPlane.svg';
-import { Navigate, Route, Routes } from 'react-router-dom';
-import Link from '@mui/material/Link';
-
-import { TicketsSearch, Home } from './pades';
+import { TicketsList, Filter, CountTransplants } from './components';
+import { ticketsList } from './api';
 
 import style from './App.module.scss';
 
 function App() {
+   const [alignment, setAlignment] = useState('cheap');
+ 
+   const handleChange = (event, newAlignment) => {
+      setAlignment(newAlignment);
+   };
    return (
       <div className={style.App}>
          <div className={style.logoContainer}>
             <Logo />
          </div>
-         <div className={style.linkContainer}>
-            <Link href="/home">Home</Link>
-            <Link href="/search">Search</Link>
-         </div>
          <section className={style.mainContainer}>
-            <Routes>
-               <Route path="/">
-                  <Route index element={<Navigate to="/search" replace />} />
-                  <Route path="/home" element={<Home />} />
-                  <Route path="/search" element={<TicketsSearch />} />
-                  <Route path="/*" element={<div>404 Error</div>} />
-               </Route>
-            </Routes>
+            <CountTransplants />
+            <div className={style.containerList}>
+               <Filter alignment={alignment} handleChange={handleChange} />
+               <TicketsList list={ticketsList} />
+            </div>
          </section>
       </div>
    );
