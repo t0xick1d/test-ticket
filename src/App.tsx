@@ -3,7 +3,7 @@ import { ReactComponent as Logo } from './logoPlane.svg';
 import { Navigate, Route, Routes } from 'react-router-dom';
 import Link from '@mui/material/Link';
 
-import { TicketsSearch, Home } from './pades';
+import { TicketsSearch, Home } from './pages';
 
 import style from './App.module.scss';
 

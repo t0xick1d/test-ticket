@@ -1,11 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { ticketsList } from '../../api';
+import { TicketsI } from '../../types/TicketsInterface';
+
+export interface ticketStateI {
+   data: TicketsI[];
+}
+
+const initialState: ticketStateI = {
+   data: [],
+};
 
 export const ticketsSlice = createSlice({
    name: 'tickets',
-   initialState: {
-      data: ticketsList,
-   },
+   initialState,
    reducers: {},
 });
 

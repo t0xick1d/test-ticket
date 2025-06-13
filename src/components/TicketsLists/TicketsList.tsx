@@ -2,47 +2,55 @@ import React from 'react';
 import Item from './Item';
 import style from './style.module.scss';
 import { Grid, Box, Card } from '@mui/material';
+import { TicketsI, SegmentsI } from '../../types/TicketsInterface';
+interface MyComponentProps {
+   list: TicketsI[];
+   transplants: {
+      all: boolean;
+      noneTransplants: boolean;
+      oneTransplants: boolean;
+      twoTransplants: boolean;
+      threeTransplants: boolean;
+   };
+   alignment: string;
+}
 
-const TicketsList = ({ list, transplants, alignment }) => {
-   const filterTransplants = (item) => {
+const TicketsList: React.FC<MyComponentProps> = ({ list, transplants, alignment }) => {
+   const filterTransplants = (item: TicketsI): boolean | undefined => {
       if (transplants.all) {
          return true;
       }
-      if (transplants.noneTransplants) {
-         return item.segments[0].stops.length === 0 && item.segments[1].stops.length === 0;
-      }
       if (
          transplants.threeTransplants &&
-         item.segments[0].stops.length === 3 &&
-         item.segments[1].stops.length === 3
+         item.segments.some((e: SegmentsI) => e.stops.length === 3)
       ) {
          return true;
       }
       if (
          transplants.twoTransplants &&
-         item.segments[0].stops.length === 2 &&
-         item.segments[1].stops.length === 2
+         item.segments.some((e: SegmentsI) => e.stops.length === 2)
       ) {
          return true;
       }
       if (
          transplants.oneTransplants &&
-         item.segments[0].stops.length === 1 &&
-         item.segments[1].stops.length === 1
+         item.segments.some((e: SegmentsI) => e.stops.length === 1)
       ) {
          return true;
+      }
+      if (transplants.noneTransplants) {
+         return item.segments.some((e: SegmentsI) => e.stops.length === 0);
       }
    };
    const itemsCopy = list.filter((e) => filterTransplants(e));
    if (alignment === 'cheap') {
-      itemsCopy.sort((a, b) => a.price - b.price);
+      itemsCopy.sort((a: TicketsI, b: TicketsI) => a.price - b.price);
    }
    if (alignment === 'speed') {
       itemsCopy.sort(
          (a, b) =>
-            a.segments[0].duration +
-            a.segments[1].duration -
-            (b.segments[0].duration + b.segments[1].duration),
+            a.segments.reduce((acc, e) => acc + e.duration, 0) -
+            b.segments.reduce((acc, e) => acc + e.duration, 0),
       );
    }
 
