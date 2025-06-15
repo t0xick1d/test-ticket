@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SPINNER TEST 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+    data-testid="containerdiv"
+  >
+    <div
+      class="spinner"
+      data-testid="spindiv"
+    />
+  </div>
+</DocumentFragment>
+`;

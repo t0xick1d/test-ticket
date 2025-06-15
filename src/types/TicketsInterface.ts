@@ -1,6 +1,6 @@
 export interface TicketsI {
    price: number;
-   carrier: number;
+   carrier: string;
    date: string;
    segments: [SegmentsI];
 }
@@ -10,4 +10,11 @@ export interface SegmentsI {
    departureTime: string;
    duration: number;
    stops: string[];
+}
+export interface TransplantsI {
+   all: boolean;
+   noneTransplants: boolean;
+   oneTransplants: boolean;
+   twoTransplants: boolean;
+   threeTransplants: boolean;
 }

@@ -2,16 +2,10 @@ import React from 'react';
 import Item from './Item';
 import style from './style.module.scss';
 import { Grid, Box, Card } from '@mui/material';
-import { TicketsI, SegmentsI } from '../../types/TicketsInterface';
+import { TicketsI, SegmentsI, TransplantsI } from '../../types/TicketsInterface';
 interface MyComponentProps {
    list: TicketsI[];
-   transplants: {
-      all: boolean;
-      noneTransplants: boolean;
-      oneTransplants: boolean;
-      twoTransplants: boolean;
-      threeTransplants: boolean;
-   };
+   transplants: TransplantsI;
    alignment: string;
 }
 
@@ -22,24 +16,24 @@ const TicketsList: React.FC<MyComponentProps> = ({ list, transplants, alignment 
       }
       if (
          transplants.threeTransplants &&
-         item.segments.some((e: SegmentsI) => e.stops.length === 3)
+         item.segments.every((e: SegmentsI) => e.stops.length <= 3)
       ) {
          return true;
       }
       if (
          transplants.twoTransplants &&
-         item.segments.some((e: SegmentsI) => e.stops.length === 2)
+         item.segments.every((e: SegmentsI) => e.stops.length <= 2)
       ) {
          return true;
       }
       if (
          transplants.oneTransplants &&
-         item.segments.some((e: SegmentsI) => e.stops.length === 1)
+         item.segments.every((e: SegmentsI) => e.stops.length <= 1)
       ) {
          return true;
       }
       if (transplants.noneTransplants) {
-         return item.segments.some((e: SegmentsI) => e.stops.length === 0);
+         return item.segments.every((e: SegmentsI) => e.stops.length === 0);
       }
    };
    const itemsCopy = list.filter((e) => filterTransplants(e));
@@ -53,7 +47,6 @@ const TicketsList: React.FC<MyComponentProps> = ({ list, transplants, alignment 
             b.segments.reduce((acc, e) => acc + e.duration, 0),
       );
    }
-
    return (
       <Box sx={{ flexGrow: 1 }}>
          <Grid

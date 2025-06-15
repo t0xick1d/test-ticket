@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import { TicketsList, Filter, CountTransplants, Spinner } from '../../components';
 import { useGetTicketsQuery, useGetSearchIdQuery } from '../../redux/ducks/tickets';
 
@@ -18,7 +18,7 @@ const TicketsSearch: React.FC = () => {
    const handleChange = (e: React.MouseEvent<HTMLElement>, newAlignment: string) => {
       setAlignment(newAlignment);
    };
-   const transplantsChange = (event: React.MouseEvent<HTMLElement>) => {
+ const transplantsChange = (event: ChangeEvent<HTMLInputElement>) => {
       const target = event.target as HTMLInputElement;
       setTransplants({
          ...transplants,

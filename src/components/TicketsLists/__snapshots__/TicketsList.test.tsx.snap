@@ -1,0 +1,215 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TicketsList component matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="MuiBox-root css-i9gxme"
+  >
+    <div
+      class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-row MuiGrid-spacing-xs-4 containerList css-1ydw195-MuiGrid-root"
+    >
+      <div
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-1j74uew-MuiPaper-root-MuiCard-root"
+        style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);"
+      >
+        <div
+          class="containerMainInf"
+        >
+          <p
+            class="priceText"
+          >
+            10000 P
+          </p>
+          <p
+            class="carrierText"
+          >
+            SU
+          </p>
+        </div>
+        <ul
+          class="containerSegments"
+        >
+          <li
+            class="containerSegmentsItem"
+          >
+            <div
+              class="containerInfo"
+            >
+              <p
+                class="secondaryText"
+              >
+                MOW - HKT
+              </p>
+              <p>
+                10:30
+              </p>
+            </div>
+            <div
+              class="containerInfo"
+            >
+              <p
+                class="secondaryText"
+              >
+                В пути
+              </p>
+              <p>
+                3ч 0м
+              </p>
+            </div>
+            <div
+              class="containerInfo"
+            >
+              <p
+                class="secondaryText"
+              >
+                0 пересадки
+              </p>
+              <div
+                class="containerStops"
+              />
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-1j74uew-MuiPaper-root-MuiCard-root"
+        style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);"
+      >
+        <div
+          class="containerMainInf"
+        >
+          <p
+            class="priceText"
+          >
+            12000 P
+          </p>
+          <p
+            class="carrierText"
+          >
+            S7
+          </p>
+        </div>
+        <ul
+          class="containerSegments"
+        >
+          <li
+            class="containerSegmentsItem"
+          >
+            <div
+              class="containerInfo"
+            >
+              <p
+                class="secondaryText"
+              >
+                MOW - HKT
+              </p>
+              <p>
+                11:00
+              </p>
+            </div>
+            <div
+              class="containerInfo"
+            >
+              <p
+                class="secondaryText"
+              >
+                В пути
+              </p>
+              <p>
+                2ч 0м
+              </p>
+            </div>
+            <div
+              class="containerInfo"
+            >
+              <p
+                class="secondaryText"
+              >
+                1 пересадки
+              </p>
+              <div
+                class="containerStops"
+              >
+                <p
+                  class="pStops"
+                >
+                  DXB
+                </p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div
+        class="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-1j74uew-MuiPaper-root-MuiCard-root"
+        style="--Paper-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2),0px 1px 1px 0px rgba(0,0,0,0.14),0px 1px 3px 0px rgba(0,0,0,0.12);"
+      >
+        <div
+          class="containerMainInf"
+        >
+          <p
+            class="priceText"
+          >
+            15000 P
+          </p>
+          <p
+            class="carrierText"
+          >
+            S7
+          </p>
+        </div>
+        <ul
+          class="containerSegments"
+        >
+          <li
+            class="containerSegmentsItem"
+          >
+            <div
+              class="containerInfo"
+            >
+              <p
+                class="secondaryText"
+              >
+                MOW - HKT
+              </p>
+              <p>
+                11:00
+              </p>
+            </div>
+            <div
+              class="containerInfo"
+            >
+              <p
+                class="secondaryText"
+              >
+                В пути
+              </p>
+              <p>
+                2ч 0м
+              </p>
+            </div>
+            <div
+              class="containerInfo"
+            >
+              <p
+                class="secondaryText"
+              >
+                1 пересадки
+              </p>
+              <div
+                class="containerStops"
+              >
+                <p
+                  class="pStops"
+                >
+                  DXB
+                </p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
