@@ -1,27 +1,3 @@
-// import React from 'react';
-// import { render } from '@testing-library/react';
-// import CountTransplants from './CountTransplants';
-// import { TransplantsI } from '../../types/TicketsInterface';
-
-// describe('CountTransplants snapshot', () => {
-//    const mockTransplants: TransplantsI = {
-//       all: false,
-//       noneTransplants: false,
-//       oneTransplants: false,
-//       twoTransplants: false,
-//       threeTransplants: false,
-//    };
-
-//    const mockSetTransplants = jest.fn();
-
-//    it('matches snapshot', () => {
-//       const { asFragment } = render(
-//          <CountTransplants transplants={mockTransplants} setTransplants={mockSetTransplants} />,
-//       );
-//       expect(asFragment()).toMatchSnapshot();
-//    });
-// });
-
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import CountTransplants from './CountTransplants';
