@@ -2,7 +2,8 @@ import React from 'react';
 import Item from './Item';
 import style from './style.module.scss';
 import { Grid, Box, Card } from '@mui/material';
-import { TicketsI, SegmentsI, TransplantsI } from '../../types/TicketsInterface';
+import { TicketsI, TransplantsI } from '../../types/TicketsInterface';
+import { filterTransplants } from '../../utils/ticketsUtils/ticketsUtils';
 interface MyComponentProps {
    list: TicketsI[];
    transplants: TransplantsI;
@@ -10,33 +11,7 @@ interface MyComponentProps {
 }
 
 const TicketsList: React.FC<MyComponentProps> = ({ list, transplants, alignment }) => {
-   const filterTransplants = (item: TicketsI): boolean | undefined => {
-      if (transplants.all) {
-         return true;
-      }
-      if (
-         transplants.threeTransplants &&
-         item.segments.every((e: SegmentsI) => e.stops.length <= 3)
-      ) {
-         return true;
-      }
-      if (
-         transplants.twoTransplants &&
-         item.segments.every((e: SegmentsI) => e.stops.length <= 2)
-      ) {
-         return true;
-      }
-      if (
-         transplants.oneTransplants &&
-         item.segments.every((e: SegmentsI) => e.stops.length <= 1)
-      ) {
-         return true;
-      }
-      if (transplants.noneTransplants) {
-         return item.segments.every((e: SegmentsI) => e.stops.length === 0);
-      }
-   };
-   const itemsCopy = list.filter((e) => filterTransplants(e));
+   const itemsCopy = list.filter((e) => filterTransplants(transplants, e));
    if (alignment === 'cheap') {
       itemsCopy.sort((a: TicketsI, b: TicketsI) => a.price - b.price);
    }

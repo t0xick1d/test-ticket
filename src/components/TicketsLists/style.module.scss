@@ -1,42 +1,53 @@
 @import '../../vars.scss';
-.containerList{ 
- margin: 10px;
+.container {
+   min-width: 360px;
+   padding: 0px 10px;
+   min-height: auto;
 }
-.containerMainInf{ 
- display: flex;
- justify-content: space-between;
+.containerList {
+   margin: 10px;
 }
-.priceText, .carrierText{ 
- color:#2698f3;
- padding: 20px 30px;
- font-size: larger;
+.containerMainInf {
+   display: flex;
+   justify-content: space-between;
+   padding: 0px 10px;
 }
-.carrierText{ 
- color: black
+.priceText,
+.carrierText {
+   color: #2698f3;
+   padding: 20px 30px;
+   font-size: larger;
 }
-.containerSegments{ 
- min-width: 100%;
- padding: 0px;
- display: flex;
- flex-direction: column; 
+.carrierText {
+   color: black;
 }
-.containerInfo{
- width: 120px;
+.containerSegments {
+   padding: 0px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
 }
-.secondaryText{ 
- color: #adbbc3;
- font-size: 12px;
- text-transform: uppercase;
+
+.secondaryText {
+   color: #adbbc3;
+   font-size: 12px;
+   text-transform: uppercase;
 }
-.containerStops{
- display: flex;
- justify-content: center;
+.containerStops {
+   display: flex;
+   justify-content: center;
 }
-.pStops{
- padding: 2px;
- align-items: center;
+.pStops {
+   padding: 2px;
+   align-items: center;
 }
-.containerSegmentsItem{ 
- display: flex;
- justify-content: space-between;
+.containerSegmentsItem {
+   display: flex;
+   justify-content: space-between;
+}
+@media screen and (min-width: $screen-tablet) {
+   .container {
+      min-width: 260px;
+      min-height: auto;
+   }
 }

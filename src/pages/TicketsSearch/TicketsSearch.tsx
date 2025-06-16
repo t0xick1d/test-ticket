@@ -18,7 +18,7 @@ const TicketsSearch: React.FC = () => {
    const handleChange = (e: React.MouseEvent<HTMLElement>, newAlignment: string) => {
       setAlignment(newAlignment);
    };
- const transplantsChange = (event: ChangeEvent<HTMLInputElement>) => {
+   const transplantsChange = (event: ChangeEvent<HTMLInputElement>) => {
       const target = event.target as HTMLInputElement;
       setTransplants({
          ...transplants,
