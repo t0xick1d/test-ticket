@@ -25,3 +25,29 @@ exports[`TicketsSearch matches snapshot 1`] = `
   </div>
 </DocumentFragment>
 `;
+
+exports[`TicketsSearch should matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="App"
+  >
+    <section
+      class="mainContainer"
+    >
+      <div>
+        CountTransplantsMock
+      </div>
+      <div
+        class="containerList"
+      >
+        <div>
+          FilterMock
+        </div>
+        <div>
+          TicketsListMock
+        </div>
+      </div>
+    </section>
+  </div>
+</DocumentFragment>
+`;

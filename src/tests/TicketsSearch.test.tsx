@@ -1,16 +1,16 @@
 // TicketsSearch.test.tsx
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import TicketsSearch from './TicketsSearch';
+import TicketsSearch from '../pages/TicketsSearch/TicketsSearch';
 
-import { useGetTicketsQuery, useGetSearchIdQuery } from '../../redux/ducks/tickets';
+import { useGetTicketsQuery, useGetSearchIdQuery } from '../redux/ducks/tickets';
 
-jest.mock('../../redux/ducks/tickets', () => ({
+jest.mock('../redux/ducks/tickets', () => ({
    useGetTicketsQuery: jest.fn(),
    useGetSearchIdQuery: jest.fn(),
 }));
 
-jest.mock('../../components', () => ({
+jest.mock('../components', () => ({
    TicketsList: () => <div>TicketsListMock</div>,
    Filter: () => <div>FilterMock</div>,
    CountTransplants: () => <div>CountTransplantsMock</div>,
@@ -22,7 +22,7 @@ describe('TicketsSearch', () => {
       jest.clearAllMocks();
    });
 
-   it('renders Spinner while loading', () => {
+   it('should renders Spinner while loading', () => {
       (useGetTicketsQuery as jest.Mock).mockReturnValue({ isLoading: true });
       (useGetSearchIdQuery as jest.Mock).mockReturnValue({ error: null });
 
@@ -31,7 +31,7 @@ describe('TicketsSearch', () => {
       expect(screen.getByText('SpinnerMock')).toBeInTheDocument();
    });
 
-   it('renders error message on error', () => {
+   it('should renders error message on error', () => {
       (useGetTicketsQuery as jest.Mock).mockReturnValue({ isLoading: false, error: true });
       (useGetSearchIdQuery as jest.Mock).mockReturnValue({ error: false });
 
@@ -40,7 +40,7 @@ describe('TicketsSearch', () => {
       expect(screen.getByText('errorSearchID')).toBeInTheDocument();
    });
 
-   it('renders components with data', () => {
+   it('should renders component CountTransplantsMock', () => {
       (useGetTicketsQuery as jest.Mock).mockReturnValue({
          isLoading: false,
          error: null,
@@ -51,11 +51,33 @@ describe('TicketsSearch', () => {
       render(<TicketsSearch />);
 
       expect(screen.getByText('CountTransplantsMock')).toBeInTheDocument();
+   });
+   it('should renders component FilterMock', () => {
+      (useGetTicketsQuery as jest.Mock).mockReturnValue({
+         isLoading: false,
+         error: null,
+         data: [{ id: 1 }],
+      });
+      (useGetSearchIdQuery as jest.Mock).mockReturnValue({ error: null });
+
+      render(<TicketsSearch />);
+
       expect(screen.getByText('FilterMock')).toBeInTheDocument();
+   });
+   it('should renders component TicketsListMock', () => {
+      (useGetTicketsQuery as jest.Mock).mockReturnValue({
+         isLoading: false,
+         error: null,
+         data: [{ id: 1 }],
+      });
+      (useGetSearchIdQuery as jest.Mock).mockReturnValue({ error: null });
+
+      render(<TicketsSearch />);
+
       expect(screen.getByText('TicketsListMock')).toBeInTheDocument();
    });
 
-   it('matches snapshot', () => {
+   it('should matches snapshot', () => {
       (useGetTicketsQuery as jest.Mock).mockReturnValue({
          isLoading: false,
          error: null,

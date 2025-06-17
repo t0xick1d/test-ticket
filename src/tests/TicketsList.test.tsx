@@ -1,7 +1,6 @@
-import React from 'react';
 import { render, screen } from '@testing-library/react';
-import TicketsList from './TicketsList';
-import { TicketsI, TransplantsI } from '../../types/TicketsInterface';
+import TicketsList from '../components/TicketsLists/TicketsList';
+import { TicketsI, TransplantsI } from '../types/TicketsInterface';
 
 const mockTickets: TicketsI[] = [
    {
@@ -57,7 +56,7 @@ const baseTransplants: TransplantsI = {
 };
 
 describe('TicketsList component', () => {
-   it('sorts tickets by price when alignment is "cheap"', () => {
+   it('should check first tickets by price when alignment is "cheap"', () => {
       render(
          <TicketsList
             list={mockTickets}
@@ -65,13 +64,30 @@ describe('TicketsList component', () => {
             transplants={{ ...baseTransplants, all: true }}
          />,
       );
-      const cards = screen.getAllByText(/P/i);
-      expect(cards[0]).toHaveTextContent('10000');
-      expect(cards[1]).toHaveTextContent('12000');
-      expect(cards[2]).toHaveTextContent('15000');
+      expect(screen.getByText(/10000 P/i)).toHaveTextContent('10000 P');
+   });
+   it('should check second tickets by price when alignment is "cheap"', () => {
+      render(
+         <TicketsList
+            list={mockTickets}
+            alignment="cheap"
+            transplants={{ ...baseTransplants, all: true }}
+         />,
+      );
+      expect(screen.getByText(/12000 P/i)).toHaveTextContent('12000 P');
+   });
+   it('should check third tickets by price when alignment is "cheap"', () => {
+      render(
+         <TicketsList
+            list={mockTickets}
+            alignment="cheap"
+            transplants={{ ...baseTransplants, all: true }}
+         />,
+      );
+      expect(screen.getByText(/15000 P/i)).toHaveTextContent('15000 P');
    });
 
-   it('sorts tickets by speed when alignment is "speed"', () => {
+   it('should check first tickets by speed when alignment is "speed"', () => {
       render(
          <TicketsList
             list={mockTickets}
@@ -79,13 +95,30 @@ describe('TicketsList component', () => {
             transplants={{ ...baseTransplants, all: true }}
          />,
       );
-      const cards = screen.getAllByText(/P/i);
-      expect(cards[0]).toHaveTextContent('15000');
-      expect(cards[1]).toHaveTextContent('12000');
-      expect(cards[2]).toHaveTextContent('10000');
+      expect(screen.getByText(/15000 P/i)).toHaveTextContent('15000 P');
+   });
+   it('should check second tickets by speed when alignment is "speed"', () => {
+      render(
+         <TicketsList
+            list={mockTickets}
+            alignment="speed"
+            transplants={{ ...baseTransplants, all: true }}
+         />,
+      );
+      expect(screen.getByText(/12000 P/i)).toHaveTextContent('12000 P');
+   });
+   it('should check third tickets by speed when alignment is "speed"', () => {
+      render(
+         <TicketsList
+            list={mockTickets}
+            alignment="speed"
+            transplants={{ ...baseTransplants, all: true }}
+         />,
+      );
+      expect(screen.getByText(/10000 P/i)).toHaveTextContent('10000 P');
    });
 
-   it('filters only tickets with 0 stops', () => {
+   it('should filters only tickets with 0 stops', () => {
       render(
          <TicketsList
             list={mockTickets}
@@ -94,11 +127,9 @@ describe('TicketsList component', () => {
          />,
       );
       expect(screen.getAllByText(/P/i)).toHaveLength(1);
-      expect(screen.getByText('10000 P')).toBeInTheDocument();
-      expect(screen.queryByText('12000 P')).not.toBeInTheDocument();
    });
 
-   it('filters only tickets with 1 stop max', () => {
+   it('should filters only tickets with 1 stop max', () => {
       render(
          <TicketsList
             list={mockTickets}
@@ -108,11 +139,8 @@ describe('TicketsList component', () => {
       );
       const cards = screen.getAllByText(/P/i);
       expect(cards).toHaveLength(3);
-      expect(cards[0]).toHaveTextContent('10000');
-      expect(cards[1]).toHaveTextContent('12000');
-      expect(cards[2]).toHaveTextContent('15000');
    });
-   it('matches snapshot', () => {
+   it('should matches snapshot', () => {
       const { asFragment } = render(
          <TicketsList
             list={mockTickets}

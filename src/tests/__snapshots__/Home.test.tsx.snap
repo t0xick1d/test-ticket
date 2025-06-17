@@ -9,3 +9,13 @@ exports[`Home matches snapshot 1`] = `
   </h1>
 </DocumentFragment>
 `;
+
+exports[`should Home matches snapshot 1`] = `
+<DocumentFragment>
+  <h1
+    data-testid="home"
+  >
+    Home
+  </h1>
+</DocumentFragment>
+`;

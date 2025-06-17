@@ -1,7 +1,6 @@
-import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import CountTransplants from './CountTransplants';
-import { TransplantsI } from '../../types/TicketsInterface';
+import CountTransplants from '../components/CountTransplants/CountTransplants';
+import { TransplantsI } from '../types/TicketsInterface';
 
 describe('CountTransplants component', () => {
    const mockTransplants: TransplantsI = {
@@ -14,18 +13,39 @@ describe('CountTransplants component', () => {
 
    const mockSetTransplants = jest.fn();
 
-   it('renders all checkboxes with correct labels', () => {
+   it('should renders all checkbox with correct labels', () => {
       render(
          <CountTransplants transplants={mockTransplants} setTransplants={mockSetTransplants} />,
       );
       expect(screen.getByLabelText('Все')).toBeInTheDocument();
+   });
+
+   it('should renders noneTransplants checkbox with correct labels', () => {
+      render(
+         <CountTransplants transplants={mockTransplants} setTransplants={mockSetTransplants} />,
+      );
       expect(screen.getByLabelText('Без пересадок')).toBeInTheDocument();
+   });
+   it('should renders oneTransplants checkbox with correct labels', () => {
+      render(
+         <CountTransplants transplants={mockTransplants} setTransplants={mockSetTransplants} />,
+      );
       expect(screen.getByLabelText('1 пересадка')).toBeInTheDocument();
+   });
+   it('should renders twoTransplants checkbox with correct labels', () => {
+      render(
+         <CountTransplants transplants={mockTransplants} setTransplants={mockSetTransplants} />,
+      );
       expect(screen.getByLabelText('2 пересадки')).toBeInTheDocument();
+   });
+   it('should renders threeTransplants checkbox with correct labels', () => {
+      render(
+         <CountTransplants transplants={mockTransplants} setTransplants={mockSetTransplants} />,
+      );
       expect(screen.getByLabelText('3 пересадки')).toBeInTheDocument();
    });
 
-   it('calls setTransplants on checkbox change', () => {
+   it('should calls setTransplants on checkbox change', () => {
       render(
          <CountTransplants transplants={mockTransplants} setTransplants={mockSetTransplants} />,
       );
@@ -34,7 +54,7 @@ describe('CountTransplants component', () => {
       expect(mockSetTransplants).toHaveBeenCalledTimes(1);
    });
 
-   it('matches snapshot', () => {
+   it('should matches snapshot', () => {
       const { asFragment } = render(
          <CountTransplants transplants={mockTransplants} setTransplants={mockSetTransplants} />,
       );

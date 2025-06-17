@@ -1,4 +1,4 @@
-import { formatMinutesToHours, getHoursAndMinutes } from './timeUtils';
+import { formatMinutesToHours, getHoursAndMinutes } from '../utils/timeUtils/timeUtils';
 
 describe('formatMinutesToHours', () => {
    it('should format 0 minutes correctly', () => {
