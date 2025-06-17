@@ -1,0 +1,153 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Item component matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="containerMainInf"
+  >
+    <p
+      class="priceText"
+    >
+      13196 P
+    </p>
+    <p
+      class="carrierText"
+    >
+      S7
+    </p>
+  </div>
+  <ul
+    class="containerSegments"
+  >
+    <li
+      class="containerSegmentsItem"
+    >
+      <div
+        class="containerInfo"
+      >
+        <p
+          class="secondaryText"
+        >
+          MOW - HKT
+        </p>
+        <p>
+          10:30
+        </p>
+      </div>
+      <div
+        class="containerInfo"
+      >
+        <p
+          class="secondaryText"
+        >
+          В пути
+        </p>
+        <p>
+          2ч 0м
+        </p>
+      </div>
+      <div
+        class="containerInfo"
+      >
+        <p
+          class="secondaryText"
+        >
+          2 пересадки
+        </p>
+        <div
+          class="containerStops"
+        >
+          <p
+            class="pStops"
+          >
+            DXB
+          </p>
+          <p
+            class="pStops"
+          >
+            IST
+          </p>
+        </div>
+      </div>
+    </li>
+  </ul>
+</DocumentFragment>
+`;
+
+exports[`Item component should matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="container"
+  >
+    <div
+      class="containerMainInf"
+    >
+      <p
+        class="priceText"
+      >
+        13196 P
+      </p>
+      <p
+        class="carrierText"
+      >
+        S7
+      </p>
+    </div>
+    <ul
+      class="containerSegments"
+    >
+      <li
+        class="containerSegmentsItem"
+      >
+        <div
+          class="containerInfo"
+        >
+          <p
+            class="secondaryText"
+          >
+            MOW - HKT
+          </p>
+          <p>
+            10:30
+          </p>
+        </div>
+        <div
+          class="containerInfo"
+        >
+          <p
+            class="secondaryText"
+          >
+            В пути
+          </p>
+          <p>
+            2ч 0м
+          </p>
+        </div>
+        <div
+          class="containerInfo"
+        >
+          <p
+            class="secondaryText"
+          >
+            2 пересадки
+          </p>
+          <div
+            class="containerStops"
+          >
+            <p
+              class="pStops"
+            >
+              DXB
+            </p>
+            <p
+              class="pStops"
+            >
+              IST
+            </p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;
