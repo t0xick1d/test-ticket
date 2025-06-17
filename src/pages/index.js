@@ -1,4 +1,5 @@
 import Home from './Home/Home';
 import TicketsSearch from './TicketsSearch/TicketsSearch';
+import GridTickets from './GridTickets/GridTickets';
 
-export { Home, TicketsSearch };
+export { Home, TicketsSearch, GridTickets };
