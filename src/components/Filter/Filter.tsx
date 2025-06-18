@@ -16,8 +16,12 @@ const Filter: React.FC<MyComponentProps> = ({ alignment, handleChange }) => (
          onChange={handleChange}
          aria-label="Platform"
       >
-         <ToggleButton value="cheap">Самый дешевый</ToggleButton>
-         <ToggleButton value="speed">Самый Быстрый</ToggleButton>
+         <ToggleButton data-testid="buttonCheap" value="cheap">
+            Самый дешевый
+         </ToggleButton>
+         <ToggleButton data-testid="buttonSpeed" value="speed">
+            Самый Быстрый
+         </ToggleButton>
       </ToggleButtonGroup>
    </>
 );
