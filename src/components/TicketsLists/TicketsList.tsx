@@ -26,16 +26,16 @@ const TicketsList: React.FC<MyComponentProps> = ({ list, transplants, alignment 
       <Box sx={{ flexGrow: 1 }}>
          <Grid
             container
-            spacing={4}
             sx={{
                justifyContent: 'center',
                alignItems: 'center',
             }}
-            columnSpacing={{ xs: 1, sm: 2, md: 1 }}
             className={style.containerList}
          >
             {itemsCopy
-               ? itemsCopy.map((e, i) => <Card key={`${i}list`} children={<Item data={e} />} />)
+               ? itemsCopy.map((e, i) => (
+                    <Card key={`${i}list`} style={{ margin: '5px' }} children={<Item data={e} />} />
+                 ))
                : ''}
          </Grid>
       </Box>
